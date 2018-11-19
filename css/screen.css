@@ -1,6 +1,7 @@
 /*------------------------------------*\
 #FONTS
 \*------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 /*------------------------------------*\
 #Variables
@@ -15,12 +16,45 @@
     --color-neutral: SLATEGRAY;
     --color-neutral-dark: DARKSLATEGRAY;
 
+    --color-deep-dark-fantasies: #3B3B53;
+    --color-dark-fantasies: #43425D;
+    --color-lesser-dark-fantasies: #4D4F5C;
+
+    --color-very-dark-gray: #808495;
+    --color-dark-gray: #A5A4BF;
+    --color-gray: #BCBCCB;
+    --color-light-gray: #D7DAE2;
+    --color-ligthter-gray: #EBEBF2;
+    --color-very-light-gray: #F0F0F7;
+
+    --color-white: #FFFFFF;
+
+    --color-green: #3CC480;
+
+    --color-light-red: #FF6565;
+
+    --color-blue: #3B86FF;
+
+    --color-light-purple: #A3A0FB;
+
+    --color-cyan: #54D8FF;
+
     /* Shadows */
 
     /* border radius */
 
     /* transitions */
     --transition-alpha: .1s;
+
+    /* whitespaces */
+    --basline: 5px;
+    --whitespace-xs: calc(var(--basline) * 2);
+    --whitespace-s: calc(var(--basline) * 3);
+    --whitespace-m: calc(var(--basline) * 4);
+    --whitespace-l: calc(var(--basline) * 5);
+    --whitespace-xl: calc(var(--basline) * 6);
+
+
 }
 
 /*------------------------------------*\
@@ -35,8 +69,8 @@
 
 html {
     font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
     color: var(--color-neutral-dark);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -44,6 +78,9 @@ html {
     background-color: white;
 }
 
+body{
+    height: 100%;
+}
 *,
 *:before,
 *:after {
@@ -99,19 +136,20 @@ h3 {
 h1 {
     font-size: 36px;
     line-height: 48px;
-    margin: 0 0 24px;
+    margin: 0 0 var(--whitespace-l);
 }
 
 h2 {
     font-size: 32px;
     line-height: 40px;
-    margin: 0 0 24px;
+    margin: 0 0 var(--whitespace-l);
+
 }
 
 h3 {
     font-size: 26px;
     line-height: 32px;
-    margin: 0 0 24px;
+    margin: 0 0 var(--whitespace-l);
 }
 
 h4,
@@ -120,7 +158,7 @@ h6 {
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
-    margin: 0 0 24px;
+    margin: 0 0 var(--whitespace-l);
 }
 
 p,
@@ -130,12 +168,12 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0 var(--whitespace-l);
 }
 
 ul,
 ol {
-    padding-left: 24px;
+    margin: var(--whitespace-l);
 }
 
 li ul,
@@ -147,7 +185,7 @@ blockquote {
     font-style: normal;
     font-size: 23px;
     line-height: 32px;
-    margin: 0 0 24px;
+    margin: var(--whitespace-l);
 }
 
 blockquote * {
@@ -159,14 +197,14 @@ figcaption {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    margin-top: 8px;
+    margin-top: var(--whitespace-xs);
 }
 
 hr {
     border: 0;
     height: 1px;
     background: LightGrey;
-    margin: 0 0 24px;
+    margin: var(--whitespace-l);
 }
 
 a {
@@ -294,6 +332,48 @@ input::placeholder {
     ---
     Website main logo
 */
+
+.logo{
+    line-height: var(--whitespace-l);
+    margin: 0;
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 25px;
+}
+
+.c-app__logo{
+    background-color: var(--color-deep-dark-fantasies);
+    box-shadow: 0 0 10px var(--color-lesser-dark-fantasies);
+    z-index: 104;
+    font-size: 15px;
+
+}
+
+.c-app__sidebar{
+    background-color: var(--color-dark-fantasies);
+
+}
+
+.c-app__topbar{
+    background-color: var(--color-white);
+    box-shadow: 0 0 10px var(--color-lesser-dark-fantasies);
+    z-index: 999;
+}
+
+.c-app__main{
+    background-color: var(--color-very-light-gray);
+
+}
+
+.c-app{
+    height: 100vh;
+    display: grid;
+    grid-template-columns:  260px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-gap: 0;
+
+}
 
 /*------------------------------------*\
 #UTILITIES
